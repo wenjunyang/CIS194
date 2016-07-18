@@ -15,6 +15,11 @@ data LogMessage = LogMessage MessageType TimeStamp String
                 | Unknown String
   deriving (Show, Eq)
 
+instance Ord LogMessage where
+    (LogMessage _ t1 _) `compare` (LogMessage _ t2 _) = t1 `compare` t2
+    _ `compare` _                                     = error "unexpected compare"
+
+
 data MessageTree = Leaf
                  | Node MessageTree LogMessage MessageTree
   deriving (Show, Eq)
