@@ -32,7 +32,7 @@ makeStr xs | all (<= 0) xs = ""
            | otherwise     = (makeStr rest) ++ newLine ++ "\n"
            where
              newLine = map (\x -> if x > 0 then '*' else '.') xs
-             rest    = map ((-) 1) xs
+             rest    = map (subtract 1) xs
 
 histogram :: [Int] -> String
 histogram xs = (makeStr $ calDigit xs) ++ "==========\n0123456789\n"
