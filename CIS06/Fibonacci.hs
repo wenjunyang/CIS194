@@ -1,6 +1,8 @@
 {-# LANGUAGE FlexibleInstances #-}
 {-# OPTIONS_GHC -fno-warn-missing-methods #-}
 
+module Fibonacci where
+
 -- Exercise 1
 fib :: Integer -> Integer
 fib 0 = 0
